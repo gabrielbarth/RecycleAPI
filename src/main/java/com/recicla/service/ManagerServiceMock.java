@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.recicla.domain.Manager;
@@ -12,6 +13,8 @@ import com.recicla.domain.dto.ManagerDTO;
 import com.recicla.exception.ValidateBusinessRulesException;
 import com.recicla.repository.IManagerRepository;
 
+@Service
+@Transactional(readOnly = false)
 public class ManagerServiceMock implements IManagerService {
 
 	@Autowired
